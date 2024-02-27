@@ -6,7 +6,7 @@ export const Collections = () => {
   const location = useLocation();
 
   return (
-    <div className="max-w-7xl mx-auto py-8 px-4">
+    <div className="max-w-7xl mx-auto pb-8 px-4 hidden lg:block ">
       <div className="flex items-center justify-between p-2 bg-[--secondary] rounded-3xl">
         {CollectionsData.map((collection) => (
           <Link

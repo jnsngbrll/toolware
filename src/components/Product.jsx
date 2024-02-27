@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export const Product = ({ productData }) => {
   const priceDecreasePercentage =
@@ -9,12 +10,11 @@ export const Product = ({ productData }) => {
   const pdpRounded = priceDecreasePercentage.toFixed(0);
 
   return (
-    <div className="p-4 border hover:border-[--secondary]">
-      <img
-        className="w-[200px] h-[200px] border-b"
-        src={productData.image}
-        alt=""
-      />
+    <Link
+      to={`/products/${productData.id}`}
+      className="p-4 border hover:border-[--secondary]"
+    >
+      <img className="border-b" src={productData.image} alt="" />
       <h1 className="line-clamp-1">{productData.name}</h1>
       <div className="flex items-center gap-2">
         <p className="text-[#E67E22] font-semibold">
@@ -24,6 +24,6 @@ export const Product = ({ productData }) => {
           - {pdpRounded}%
         </p>
       </div>
-    </div>
+    </Link>
   );
 };

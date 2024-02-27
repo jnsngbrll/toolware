@@ -1,8 +1,8 @@
-import { BrowserRouter as Router } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Collections } from './components/Collections';
 import { Header } from './components/Header';
-import { Banner } from './components/Banner';
-import { Products } from './components/Products';
+import { Home } from './pages/Home';
+import { ProductDetails } from './pages/ProductDetails';
 import { Footer } from './components/Footer';
 
 function App() {
@@ -11,9 +11,11 @@ function App() {
       <Router>
         <Header />
         <Collections />
-        <Banner />
-        <Products />
-        <Footer/>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/products/:id" element={<ProductDetails />} />
+        </Routes>
+        <Footer />
       </Router>
     </>
   );

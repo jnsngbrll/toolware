@@ -26,14 +26,14 @@ export const Header = () => {
   });
 
   return (
-    <div className="max-w-7xl mx-auto pt-8 px-4 ">
+    <div className="max-w-7xl mx-auto py-8 px-4 ">
       <div className="flex flex-col gap-8">
         <div className="flex items-center justify-between z-10">
           <div className="flex items-center gap-4">
             <div className="text-2xl cursor-pointer">
               <IoMenuOutline />
             </div>
-            <Link to="/" className="text-xl font-extrabold">
+            <Link to="/" className="text-xl font-extrabold text-[--secondary]">
               Toolwares.
             </Link>
           </div>
@@ -46,8 +46,18 @@ export const Header = () => {
             >
               <IoSearchOutline />
             </div>
-            <IoHeartOutline />
-            <IoCartOutline />
+            <div className="flex items-center">
+              <div>
+                <IoHeartOutline />
+              </div>
+              <span className="text-[15px] font-medium">0</span>
+            </div>
+            <div className="flex items-center">
+              <div>
+                <IoCartOutline />
+              </div>
+              <span className="text-[15px] font-medium">0</span>
+            </div>
           </div>
         </div>
         <div
