@@ -30,17 +30,19 @@ export const Header = () => {
       <div className="flex flex-col gap-8">
         <div className="flex items-center justify-between z-10">
           <div className="flex items-center gap-4">
-            <div className="text-2xl">
+            <div className="text-2xl cursor-pointer">
               <IoMenuOutline />
             </div>
             <Link to="/" className="text-xl font-extrabold">
-              Toolware.
+              Toolwares.
             </Link>
           </div>
           <div className="flex items-center gap-4 text-2xl font-bold">
             <div
               onClick={() => setIsSearchbarActive(true)}
-              className={`${isSearchbarActive ? 'hidden' : 'block'}`}
+              className={`cursor-pointer ${
+                isSearchbarActive ? 'hidden' : 'block'
+              }`}
             >
               <IoSearchOutline />
             </div>
@@ -61,7 +63,7 @@ export const Header = () => {
           />
           <div
             onClick={() => setIsSearchbarActive(false)}
-            className="absolute right-4 text-2xl"
+            className="absolute right-4 text-2xl cursor-pointer"
           >
             <IoCloseOutline />
           </div>
