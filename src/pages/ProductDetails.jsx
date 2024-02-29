@@ -12,13 +12,13 @@ export const ProductDetails = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   return (
-    <div className="max-w-7xl m-auto px-4 flex flex-col gap-8">
+    <div className="max-w-7xl m-auto px-2 sm:px-4 flex flex-col gap-8">
       <div className="flex flex-col lg:flex-row gap-8 p-4 bg-[--primary] lg:bg-[#F8F9F9] rounded-2xl">
         <div className="flex flex-col items-center justify-center sm:flex-row gap-4 sm:items-start">
           <img
             src={product.images[currentIndex]}
             alt=""
-            className="max-w-[400px] max-h-[400px] bg-[--primary] border rounded-2xl"
+            className="max-w-[400px] max-h-[400px] bg-[--primary] sm:border rounded-2xl"
           />
           <div className="flex gap-2 sm:flex-col lg:w-[80px]">
             {product.images.map((image, index) => (
