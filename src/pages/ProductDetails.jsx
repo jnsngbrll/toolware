@@ -18,7 +18,7 @@ export const ProductDetails = () => {
           <img
             src={product.images[currentIndex]}
             alt=""
-            className="max-w-[400px] max-h-[400px] bg-[--primary] sm:border rounded-2xl"
+            className="lg:max-w-[450px] lg:max-h-[450px] bg-[--primary] border rounded-2xl"
           />
           <div className="flex gap-2 sm:flex-col lg:w-[80px]">
             {product.images.map((image, index) => (
