@@ -22,7 +22,7 @@ export const SearchBar = () => {
     <div
       ref={searchRef}
       className={`trasition duration-300 z-0 ${
-        isSearchbarActive ? 'mt-0' : 'mt-[-90px] opacity-0'
+        isSearchbarActive ? 'mt-0' : 'mt-[-60px] lg:mt-[-90px] opacity-0'
       }`}
     >
       <div className="relative flex items-center">
