@@ -1,29 +1,16 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useContext } from 'react';
 import {
   IoMenuOutline,
   IoSearchOutline,
-  IoCloseOutline,
   IoCartOutline,
   IoHeartOutline,
 } from 'react-icons/io5';
 import { Link } from 'react-router-dom';
+import { Context } from '../context/Context';
+import { SearchBar } from './SearchBar';
 
 export const Header = () => {
-  const [isSearchbarActive, setIsSearchbarActive] = useState(false);
-
-  const searchRef = useRef();
-
-  useEffect(() => {
-    const outsideClick = (event) => {
-      if (!searchRef.current.contains(event.target)) {
-        setIsSearchbarActive(false);
-      }
-    };
-    document.addEventListener('mousedown', outsideClick);
-    return () => {
-      document.removeEventListener('mousedown', outsideClick);
-    };
-  });
+  const { isSearchbarActive, setIsSearchbarActive } = useContext(Context);
 
   return (
     <div className="max-w-7xl mx-auto py-8 px-4 ">
@@ -60,24 +47,7 @@ export const Header = () => {
             </div>
           </div>
         </div>
-        <div
-          ref={searchRef}
-          className={`relative flex items-center trasition duration-300 z-0 ${
-            isSearchbarActive ? 'mt-0' : 'mt-[-80px] opacity-0'
-          }`}
-        >
-          <input
-            type="text"
-            placeholder="Search..."
-            className="w-full py-2 px-4 border rounded-3xl"
-          />
-          <div
-            onClick={() => setIsSearchbarActive(false)}
-            className="absolute right-4 text-2xl cursor-pointer"
-          >
-            <IoCloseOutline />
-          </div>
-        </div>
+        <SearchBar />
       </div>
     </div>
   );

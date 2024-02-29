@@ -1,9 +1,9 @@
 export const CollectionsData = [
-  { name: 'Hardware', pathname: '/collections/hardware' },
-  { name: 'Appliance', pathname: '/collections/appliance' },
-  { name: 'Home Improvement', pathname: '/collections/home-improvement' },
-  { name: 'Housewares', pathname: '/collections/housewares' },
-  { name: 'Automotive', pathname: '/collections/automotive' },
-  { name: 'Pet Supplies', pathname: '/collections/pet-supplies' },
-  { name: 'Sport Goods', pathname: '/collections/sport-goods' },
+  { name: 'Power Tools', pathname: '/collections/power-tools' },
+  { name: 'Hand Tools', pathname: '/collections/hand-tools' },
+  { name: 'Lighting', pathname: '/collections/lighting' },
+  { name: 'Electrical', pathname: '/collections/electrical' },
+  { name: 'Plumbing', pathname: '/collections/plumbing' },
+  { name: 'Lawn and Garden', pathname: '/collections/lawn-and-garden' },
+  { name: 'Paint and Sundries', pathname: '/collections/paint-and-sundries' },
 ];

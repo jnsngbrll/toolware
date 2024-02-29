@@ -2,16 +2,17 @@ import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { ProductsData } from '../data/ProductsData';
 import { FaPlus, FaRegHeart } from 'react-icons/fa6';
+import { Product } from '../components/Product';
 
 export const ProductDetails = () => {
   const { id } = useParams();
   const product = ProductsData.find((e) => e.id === Number(id));
 
-  const [quantity, setQuantity] = useState(0);
+  const [quantity, setQuantity] = useState(1);
   const [currentIndex, setCurrentIndex] = useState(0);
 
   return (
-    <div className="max-w-7xl m-auto px-4">
+    <div className="max-w-7xl m-auto px-4 flex flex-col gap-8">
       <div className="flex gap-8 p-4 bg-[#F8F9F9] rounded-2xl">
         <div className="flex gap-4">
           <div className="w-[80px] h-[80px] flex flex-col gap-4">
@@ -65,7 +66,7 @@ export const ProductDetails = () => {
             <button
               onClick={() => setQuantity(quantity - 1)}
               className="w-[50px] h-[50px] border"
-              disabled={quantity === 0}
+              disabled={quantity === 1}
             >
               -
             </button>
@@ -95,6 +96,28 @@ export const ProductDetails = () => {
               <span className="font-bold">Wishlist</span>
             </button>
           </div>
+        </div>
+      </div>
+      <div>
+        <h1 className="font-extrabold text-[--accent]">
+          PRODUCTS WITH SAME CATEGORY
+        </h1>
+        <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 sm:gap-4 lg:grid-cols-4 lg:gap-4 xl:grid-cols-5 xl:gap-8">
+          {ProductsData.map((productsWithSameCategory) => {
+            if (
+              product.id !== productsWithSameCategory.id &&
+              product.category === productsWithSameCategory.category
+            ) {
+              return (
+                <Product
+                  productData={productsWithSameCategory}
+                  key={productsWithSameCategory.id}
+                />
+              );
+            } else {
+              return null;
+            }
+          })}
         </div>
       </div>
     </div>
