@@ -13,16 +13,21 @@ export const ProductDetails = () => {
 
   return (
     <div className="max-w-7xl m-auto px-4 flex flex-col gap-8">
-      <div className="flex gap-8 p-4 bg-[#F8F9F9] rounded-2xl">
-        <div className="flex gap-4">
-          <div className="w-[80px] h-[80px] flex flex-col gap-4">
+      <div className="flex flex-col lg:flex-row gap-8 p-4 bg-[--primary] lg:bg-[#F8F9F9] rounded-2xl">
+        <div className="flex flex-col items-center justify-center sm:flex-row gap-4 sm:items-start">
+          <img
+            src={product.images[currentIndex]}
+            alt=""
+            className="max-w-[400px] max-h-[400px] bg-[--primary] border rounded-2xl"
+          />
+          <div className="flex gap-2 sm:flex-col lg:w-[80px]">
             {product.images.map((image, index) => (
               <img
                 key={index}
                 onClick={() => setCurrentIndex(index)}
                 src={image}
                 alt=""
-                className={`bg-[--primary] rounded-xl border ${
+                className={`max-w-[80px] max-h-[80px] bg-[--primary] rounded-xl border ${
                   currentIndex === index
                     ? 'border-[--secondary]'
                     : 'hover:border-[--secondary]'
@@ -30,14 +35,8 @@ export const ProductDetails = () => {
               />
             ))}
           </div>
-
-          <img
-            src={product.images[currentIndex]}
-            alt=""
-            className="max-w-[500px] min-h-[500px] bg-[--primary] border rounded-2xl"
-          />
         </div>
-        <div className="flex flex-col justify-between">
+        <div className="flex flex-col gap-4 lg:justify-between">
           <div className="pb-4 border-b">
             <h1 className="text-2xl font-bold">{product.name}</h1>
             <p>{product.description}</p>
@@ -82,14 +81,14 @@ export const ProductDetails = () => {
               +
             </button>
           </div>
-          <div className="flex items-center gap-4">
-            <button className="flex items-center gap-2 p-2 pr-4 bg-[--secondary] border border-[--secondary] rounded-full">
+          <div className="flex flex-col lg:flex-row items-center gap-4">
+            <button className="w-full lg:w-auto flex items-center gap-2 p-2 pr-4 bg-[--secondary] border border-[--secondary] rounded-full">
               <div className="text-[--secondary] bg-[--primary] p-2 rounded-full">
                 <FaPlus />
               </div>
               <span className="text-[--primary] font-bold">Cart</span>
             </button>
-            <button className="flex items-center gap-2 p-2 pr-4 bg-[--primary] border border-[--secondary] rounded-full">
+            <button className="w-full lg:w-auto flex items-center gap-2 p-2 pr-4 bg-[--primary] border border-[--secondary] rounded-full">
               <div className="p-2 text-[--primary] bg-[--secondary] border border-[--secondary] rounded-full">
                 <FaRegHeart />
               </div>
