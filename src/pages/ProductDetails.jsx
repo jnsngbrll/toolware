@@ -8,13 +8,30 @@ export const ProductDetails = () => {
   const product = ProductsData.find((e) => e.id === Number(id));
 
   const [quantity, setQuantity] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   return (
     <div className="max-w-7xl m-auto px-4">
       <div className="flex gap-8 p-4 bg-[#F8F9F9] rounded-2xl">
-        <div>
+        <div className="flex gap-4">
+          <div className="w-[80px] h-[80px] flex flex-col gap-4">
+            {product.images.map((image, index) => (
+              <img
+                key={index}
+                onClick={() => setCurrentIndex(index)}
+                src={image}
+                alt=""
+                className={`bg-[--primary] rounded-xl border ${
+                  currentIndex === index
+                    ? 'border-[--secondary]'
+                    : 'hover:border-[--secondary]'
+                }`}
+              />
+            ))}
+          </div>
+
           <img
-            src={product.image}
+            src={product.images[currentIndex]}
             alt=""
             className="max-w-[500px] min-h-[500px] bg-[--primary] border rounded-2xl"
           />
