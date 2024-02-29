@@ -15,11 +15,6 @@ export const ProductDetails = () => {
     <div className="max-w-7xl m-auto px-2 sm:px-4 flex flex-col gap-8">
       <div className="flex flex-col lg:flex-row gap-8 p-4 bg-[--primary] lg:bg-[#F8F9F9] rounded-2xl">
         <div className="flex flex-col items-center justify-center sm:flex-row gap-4 sm:items-start">
-          <img
-            src={product.images[currentIndex]}
-            alt=""
-            className="lg:max-w-[450px] lg:max-h-[450px] bg-[--primary] border rounded-2xl"
-          />
           <div className="w-full flex gap-2 sm:flex-col overflow-auto">
             {product.images.map((image, index) => (
               <img
@@ -35,10 +30,15 @@ export const ProductDetails = () => {
               />
             ))}
           </div>
+          <img
+            src={product.images[currentIndex]}
+            alt=""
+            className="lg:max-w-[450px] lg:max-h-[450px] bg-[--primary] border rounded-2xl"
+          />
         </div>
         <div className="flex flex-col gap-4 lg:justify-between">
           <div className="pb-4 border-b">
-            <h1 className="text-2xl font-bold">{product.name}</h1>
+            <h1 className="lg:text-2xl font-bold">{product.name}</h1>
             <p>{product.description}</p>
           </div>
           <div className="flex items-center">
@@ -61,10 +61,10 @@ export const ProductDetails = () => {
             <p>{product.stock} pieces avalable</p>
           </div>
           <div className="flex items-center">
-            <p className="text-xs w-[70px]">Quantity:</p>
+            <p className="hidden lg:block text-xs w-[70px]">Quantity:</p>
             <button
               onClick={() => setQuantity(quantity - 1)}
-              className="w-[50px] h-[50px] border"
+              className="w-1/3 lg:w-[50px] p-2 border border-[--secondary] rounded-l-full"
               disabled={quantity === 1}
             >
               -
@@ -72,27 +72,27 @@ export const ProductDetails = () => {
             <input
               type="text"
               value={quantity}
-              className="w-[50px] h-[50px] text-center border-y"
+              className="w-1/3 lg:w-[50px] p-2 text-center border-y border-[--secondary]"
             />
             <button
               onClick={() => setQuantity(quantity + 1)}
-              className="w-[50px] h-[50px] border"
+              className="w-1/3 lg:w-[50px] p-2 border border-[--secondary] rounded-r-full"
             >
               +
             </button>
           </div>
           <div className="flex flex-col lg:flex-row items-center gap-4">
-            <button className="w-full lg:w-auto flex items-center gap-2 p-2 pr-4 bg-[--secondary] border border-[--secondary] rounded-full">
-              <div className="text-[--secondary] bg-[--primary] p-2 rounded-full">
-                <FaPlus />
-              </div>
-              <span className="text-[--primary] font-bold">Cart</span>
-            </button>
             <button className="w-full lg:w-auto flex items-center gap-2 p-2 pr-4 bg-[--primary] border border-[--secondary] rounded-full">
               <div className="p-2 text-[--primary] bg-[--secondary] border border-[--secondary] rounded-full">
                 <FaRegHeart />
               </div>
               <span className="font-bold">Wishlist</span>
+            </button>
+            <button className="w-full lg:w-auto flex items-center gap-2 p-2 pr-4 bg-[--secondary] border border-[--secondary] rounded-full">
+              <div className="text-[--secondary] bg-[--primary] p-2 rounded-full">
+                <FaPlus />
+              </div>
+              <span className="text-[--primary] font-bold">Cart</span>
             </button>
           </div>
         </div>
