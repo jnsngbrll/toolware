@@ -20,7 +20,7 @@ export const ProductDetails = () => {
             alt=""
             className="lg:max-w-[450px] lg:max-h-[450px] bg-[--primary] border rounded-2xl"
           />
-          <div className="flex gap-2 sm:flex-col lg:w-[80px]">
+          <div className="w-full flex gap-2 sm:flex-col overflow-auto">
             {product.images.map((image, index) => (
               <img
                 key={index}
