@@ -27,7 +27,7 @@ export const ProductDetails = () => {
                 onClick={() => setCurrentIndex(index)}
                 src={image}
                 alt=""
-                className={`max-w-[80px] max-h-[80px] bg-[--primary] rounded-xl border ${
+                className={`max-w-[80px] max-h-[80px] mx-auto bg-[--primary] rounded-xl border ${
                   currentIndex === index
                     ? 'border-[--secondary]'
                     : 'hover:border-[--secondary]'

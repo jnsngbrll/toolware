@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 export const Footer = () => {
   return (
-    <div className="w-full mt-8 py-20 bg-[#F8F9F9]">
+    <div className="hidden lg:block w-full mt-8 py-20 bg-[#F8F9F9]">
       <div className="max-w-7xl px-4 m-auto grid grid-cols-5">
         {FooterData.map((FData, index) => (
           <div key={index} className="flex flex-col gap-2">
