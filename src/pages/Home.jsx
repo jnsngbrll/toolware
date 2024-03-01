@@ -1,10 +1,10 @@
 import React from 'react';
-import { Banner } from '../components/Banner';
 import { Products } from '../components/Products';
+import { Carousel } from '../components/Carousel';
 export const Home = () => {
   return (
     <>
-      <Banner />
+      <Carousel />
       <Products />
     </>
   );

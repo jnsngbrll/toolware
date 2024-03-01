@@ -54,9 +54,7 @@ export const SearchBar = () => {
         <input
           type="text"
           placeholder="Search..."
-          className={`w-full py-2 px-6 border outline-none ${
-            fillteredProductsName.length !== 0 ? 'rounded-t-3xl' : 'rounded-3xl'
-          }`}
+          className="w-full py-2 px-4 border outline-none"
           value={searchBarInput}
           onChange={(event) => setSearchBarInput(event.target.value)}
         />
@@ -68,7 +66,7 @@ export const SearchBar = () => {
         </div>
       </div>
       <div
-        className={`absolute top-10 w-full flex flex-col gap-2 py-2 px-4 bg-[--primary] border rounded-b-3xl ${
+        className={`absolute top-10 w-full flex flex-col gap-2 py-2 px-4 bg-[--primary] border ${
           fillteredProductsName.length !== 0 ? '' : 'hidden'
         }`}
       >
@@ -76,7 +74,7 @@ export const SearchBar = () => {
           <div
             key={fpnIndex}
             onClick={() => handleSelectedProductNameClick(fpn.id)}
-            className="cursor-pointer p-2 rounded-3xl hover:bg-[#F8F9F9]"
+            className="cursor-pointer hover:bg-[#F8F9F9]"
           >
             {fpn.name}
           </div>
