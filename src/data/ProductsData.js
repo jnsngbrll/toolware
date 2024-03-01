@@ -34,7 +34,7 @@ export const ProductsData = [
     name: 'Makita M56510 Electric Hand Drill (10mm)',
     description:
       'Dust proof bearings, zigzag varnish and resin coatings on motor improve durability Gear housing can be rotated to suit most cutting and grinding applications. Small circumference barrel grip for easy handling',
-    images: [d1, d2, d3, d4, d4, d4, d4],
+    images: [d1, d2, d3, d4],
     category: 'Power Tools',
     stock: 23,
     price: 999,
