@@ -17,15 +17,8 @@ export const Product = ({ productData }) => {
   };
 
   return (
-    <div
-      onClick={handleProductClick}
-      className="p-4 border hover:border-[--secondary] cursor-pointer"
-    >
-      <img
-        className="max-h-[200px] border-b"
-        src={productData.images[0]}
-        alt=""
-      />
+    <div onClick={handleProductClick} className="p-4 cursor-pointer">
+      <img className="max-h-[200px]" src={productData.images[0]} alt="" />
       <h1 className="line-clamp-1">{productData.name}</h1>
       <div className="flex items-center gap-2">
         <p className="text-[#E67E22] font-semibold">
